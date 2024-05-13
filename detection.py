@@ -74,13 +74,16 @@ class LicensePlateInference():
             # recognition
             img = image[y1:y2,x1:x2]
             result = self.ocr_model.ocr(img)
-            y = y1 - 30 if len(result[0]) > 1 else y1 - 10
-            for idx,out in enumerate(result[0]):
-                text = out[1][0]
-                cv2.putText(image, text, (x1, y),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-                y +=20
+            try:
+                y = y1 - 30 if len(result[0]) > 1 else y1 - 10
+                for idx,out in enumerate(result[0]):
+                    text = out[1][0]
+                    cv2.putText(image, text, (x1, y),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                    y +=20
+            except:
+                pass
                 
-        cv2.imwrite(output_url, image)
+        cv2.imwrite(output_url, cv2.cvtColor(image,cv2.COLOR_RGB2BGR))
         return image
     
     def video_inference(self,input_url,output_url = 'demo.mp4'):
