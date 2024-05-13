@@ -1,4 +1,4 @@
-# Folder
+# Files
 - detection.py: This file consists of inference code for this project
 - vietnamese-license-plate-detection-with-dert.ipynb: This file contains the training code of License Plate Detection with DeRT
 
