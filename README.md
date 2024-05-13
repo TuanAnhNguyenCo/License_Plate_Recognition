@@ -2,6 +2,25 @@
 - detection.py: This file consists of inference code for this project
 - vietnamese-license-plate-detection-with-dert.ipynb: This file contains the training code of License Plate Detection with DeRT
 
+# Lib:
+- Install If you don't have:
+```!pip install lightning
+   !pip install torchmetrics
+   !pip install transformers
+   !pip install -U albumentations
+```
+- If you have CUDA 9 or CUDA 10 installed on your machine, please run the following command to install
+  ```
+   python -m pip install paddlepaddle-gpu -i https://pypi.tuna.tsinghua.edu.cn/simple
+  ```
+- If you have no available GPU on your machine, please run the following command to install the CPU version
+  ```
+   python -m pip install paddlepaddle -i https://pypi.tuna.tsinghua.edu.cn/simple
+  ```
+- Install Paddle OCR Whl package:
+  ```
+     pip install "paddleocr>=2.0.1" # Recommend to use version 2.0.1+
+  ```
 # Introduce:
 - In this project, I used the DeRT model to detect the license plate and then used paddle OCR to recognize the license plate. But you can train vehicle detection and then use paddle OCR.
 
